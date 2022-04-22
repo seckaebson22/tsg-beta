@@ -1,0 +1,139 @@
+.post-wrapper {
+    @include at-least($small-desktop) {
+        padding-top: 225px;
+        padding-bottom: 150px;
+    };
+
+    .item-post {
+        .section-img {
+            padding-top: 25px;
+            padding-bottom: 25px;
+            @include until($desktop) {
+                padding: 25px 20px;
+            }
+
+            .item-img {
+                background-size: cover;
+                padding-bottom: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                transition: all 400ms ease-in-out;
+                -webkit-filter: grayscale(0);
+                filter: grayscale(0);
+                @include at-least($tablet) {
+                    padding-bottom: 325px;
+                };
+
+                a {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                }
+
+                &:hover {
+                    filter: gray;
+                    -webkit-filter: grayscale(1);
+                    filter: grayscale(1);
+                }
+            }
+        }
+
+        .item-content {
+            padding-top: 25px;
+            padding-bottom: 25px;
+            @include until($desktop) {
+                padding: 0 20px 20px;
+            }
+
+            .item-date {
+                letter-spacing: 0;
+                @include until($desktop) {
+                    font-size: 15px;
+                }
+            }
+
+            .item-text {
+                padding: 0 0 15px;
+                @include until($desktop) {
+                    font-size: 15px;
+                    line-height: 25px;
+                }
+            }
+
+            h2 {
+                @include until($mobile) {
+                    margin: 5px 0 10px;
+                }
+            }
+        }
+    }
+
+    .align-vertically {
+        align-items: center;
+    }
+
+    .post-content {
+        max-width: 955px;
+        width: 100%;
+        margin: auto;
+        padding: 39px 0 25px;
+        @include at-least($tablet) {
+            background-color: rgba(0,0,0,0.5);
+            padding: 50px 100px 100px;
+        };
+
+        .post-meta {
+            text-align: center;
+            padding-bottom: 40px;
+            @include until($mobile) {
+                text-align: left;
+            }
+
+            .date {
+                margin-bottom: 10px;
+            }
+        }
+
+        strong {
+            font-weight: 700;
+            display: block;
+        }
+
+        .post-img {
+            text-align: center;
+        }
+
+        .gallery {
+            display: flex;
+            flex-flow: row wrap;
+            margin-left: -25px !important;
+            margin-right: -25px !important;
+
+            .gallery-item {
+                padding: 25px;
+                @include until($small-tablet) {
+                    width: 100% !important;
+                    margin: 0 !important;
+                };
+
+                img {
+                    border: none !important;
+                }
+            }
+        }
+    }
+}
+
+.single-post {
+    .post-wrapper {
+        position: relative;
+        height: auto;
+    }
+
+    .footer {
+        position: relative;
+        background-color: #000;
+    }
+}

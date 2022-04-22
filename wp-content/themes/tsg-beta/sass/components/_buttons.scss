@@ -1,0 +1,58 @@
+%button {
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    color: #ECEBE3;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 25px;
+    outline: 0;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    @include until($desktop) {
+        font-size: 15px;
+        line-height: 25px;
+    }
+
+    &:before {
+        padding-right: 10px;
+        font-family: ThemeIcons !important;
+        font-style: normal;
+        font-weight: normal !important;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: "\f104";
+        font-size: 15px;
+    }
+}
+
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+.button {
+    @extend %button;
+
+    &:hover {
+        color: #B19B7A;
+    }
+}
+
+.button-secondary {
+    @extend %button;
+    background-color: #fff;
+    border-color: $brand-color;
+    color: $brand-color;
+
+    &:hover {
+        background-color: darken(#fff, 12.5%);
+    }
+}

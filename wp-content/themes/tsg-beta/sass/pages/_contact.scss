@@ -1,0 +1,48 @@
+.wpcf7 {
+	.screen-reader-response {
+		display: none !important;
+	}
+
+	.wpcf7-not-valid-tip {
+		display: block;
+	}
+
+	.wpcf7-validation-errors {
+		color: #B60005;
+	}
+}
+
+.contact-details {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+}
+
+.form {
+	.grid {
+		margin-left: -12.5px;
+		margin-right: -12.5px;
+
+		[class^="grid-"],
+		[class*=" grid-"] {
+			padding: 12.5px;
+		}
+	}
+}
+
+.note,
+.wpcf7-list-item-label {
+	@include until($desktop) {
+		font-size: 13px;
+		line-height: 17px;
+	}
+}
+
+.contact-information {
+	h4 {
+		@include until($desktop) {
+			font-size: 15px;
+			line-height: 25px;
+		}
+	}
+}

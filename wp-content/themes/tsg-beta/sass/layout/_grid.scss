@@ -1,0 +1,126 @@
+.grid {
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+    margin-left: -#{$grid-gutter-mobile};
+    margin-right: -#{$grid-gutter-mobile};
+    @include at-least($small-desktop) {
+        margin-left: -#{$grid-gutter-smalldesktop};
+        margin-right: -#{$grid-gutter-smalldesktop};
+    };
+    @include at-least($desktop) {
+        margin-left: -#{$grid-gutter};
+        margin-right: -#{$grid-gutter};
+    };
+
+    &.small-padding {
+        [class^="grid-"],
+        [class*=" grid-"] {
+            padding: 0 20px 50px 20px;
+
+            @include until($small-desktop) {
+                padding: 0 10px;
+            }
+
+            @include until($small-tablet) {
+                padding: 0;
+            }
+        }
+    }
+}
+
+[class^="grid-"],
+[class*=" grid-"] {
+    padding: #{$grid-gutter-mobile};
+    @include at-least($small-desktop) {
+        padding: #{$grid-gutter-smalldesktop};
+    };
+    @include at-least($desktop) {
+        padding: #{$grid-gutter};
+    };
+}
+@for $i from 1 through $grid-columns {
+    .grid-xs-#{$i} {
+        width: calc(100% / (#{$grid-columns} / #{$i}));
+    }
+
+    .offset-xs-#{$i} {
+        margin-left: calc(100% / (#{$grid-columns} / #{$i}));
+    }
+}
+@include at-least($mobile) {
+    @for $i from 1 through $grid-columns {
+        .grid-sm-#{$i} {
+            width: calc(100% / (#{$grid-columns} / #{$i}));
+        }
+
+        .offset-sm-#{$i} {
+            margin-left: calc(100% / (#{$grid-columns} / #{$i}));
+        }
+    }
+}
+@include at-least($small-tablet) {
+    @for $i from 1 through $grid-columns {
+        .grid-s-#{$i} {
+            width: calc(100% / (#{$grid-columns} / #{$i}));
+        }
+
+        .offset-s-#{$i} {
+            margin-left: calc(100% / (#{$grid-columns} / #{$i}));
+        }
+    }
+}
+@include at-least($tablet) {
+    @for $i from 1 through $grid-columns {
+        .grid-m-#{$i} {
+            width: calc(100% / (#{$grid-columns} / #{$i}));
+        }
+
+        .offset-m-#{$i} {
+            margin-left: calc(100% / (#{$grid-columns} / #{$i}));
+        }
+    }
+}
+@include at-least($small-desktop) {
+    @for $i from 1 through $grid-columns {
+        .grid-md-#{$i} {
+            width: calc(100% / (#{$grid-columns} / #{$i}));
+        }
+
+        .offset-md-#{$i} {
+            margin-left: calc(100% / (#{$grid-columns} / #{$i}));
+        }
+    }
+}
+@include at-least($desktop) {
+    @for $i from 1 through $grid-columns {
+        .grid-#{$i} {
+            width: calc(100% / (#{$grid-columns} / #{$i}));
+        }
+
+        .offset-#{$i} {
+            margin-left: calc(100% / (#{$grid-columns} / #{$i}));
+        }
+    }
+}
+//(desktop#  small-desktop(md) tablet(m) small-tablet(s) mobile(sm) xtremesmall-moblie(xs) )
+
+.second-slide {
+    background-color: aqua;
+
+    .lin {
+        width: calc(100%/5);
+        height: 500px !important;
+        padding: 40px;
+        margin-bottom: 108px;
+    }
+}
+
+.grid-double {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    @include until($small-tablet) {
+        flex-direction: column-reverse;
+    }
+}

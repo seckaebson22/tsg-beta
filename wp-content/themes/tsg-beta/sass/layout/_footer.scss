@@ -1,0 +1,108 @@
+.footer {
+    z-index: 99;
+    color: #fff;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(76, 76, 76, 0.8);
+    @include at-least($small-desktop) {
+        position: fixed;
+    };
+
+    .centering {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        @include until($small-desktop) {
+            text-align: center;
+        };
+
+        @include until($small-tablet) {
+            flex-direction: column !important;
+        }
+
+        @include at-least($mobile) {
+            flex-flow: row;
+        };
+    }
+
+    .footer-widget {
+        width: 100%;
+        padding: 5px 0;
+        @include at-least($small-desktop) {
+            width: calc(80%);
+        };
+
+        &.social-widget {
+            width: 20%;
+            
+            @include until($small-desktop) {
+                display: none;
+            };
+        }
+
+        .smallprint {
+            @include until($desktop) {
+                font-size: 15px;
+                line-height: 25px;
+                display: flex;
+            }
+            @include until($small-tablet) {
+                justify-content: center;
+            };
+        }
+    }
+
+    .smallprint {
+        font-size: 14px;
+
+        span {
+            @include until($small-desktop) {
+                display: block;
+            };
+            padding: 2px;
+        }
+    }
+}
+
+.designbyxanda {
+    @include until($small-tablet) {
+        margin-top: -20px;
+    };
+    @include at-least($small-tablet) {
+        text-align: right;
+    };
+
+    a {
+        text-decoration: none;
+        color: #FFFFFF;
+        font-family: "Montserrat";
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: 25px;
+        @include until($desktop) {
+            font-size: 15px;
+            line-height: 25px;
+        }
+        position: relative;
+
+        &:before {
+            content: "";
+            height: 3px;
+            background-color: #ECEBE3;
+            bottom: -5px;
+            right: 100%;
+            left: 0;
+            transition: right 400ms ease-in-out;
+            position: absolute;
+        }
+
+        &:hover {
+            &:before {
+                right: 0;
+            }
+        }
+    }
+}

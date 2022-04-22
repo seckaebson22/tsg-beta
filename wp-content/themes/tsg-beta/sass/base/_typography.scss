@@ -1,0 +1,117 @@
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $text-color;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $headings-color;
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    line-height: $headings-line-height;
+    padding: 0;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+.h1,
+h1 {
+    font-size: 24px;
+    margin: 0;
+
+    @include at-least($small-tablet){
+        font-size: 45px;
+    }
+}
+
+.h2,
+h2 {
+    font-size: 23px;
+    letter-spacing: -0.5px;
+    line-height: 40px;
+    font-weight: 400;
+    margin: 0 0 10px;
+
+    @include at-least($desktop) {
+        line-height: 45px;
+        font-size: 28px;
+    };
+}
+
+.h3,
+h3 {
+    font-size: 23px;
+    margin: 0 0 10px;
+}
+
+.h4,
+h4 {
+    font-size: 20px;
+    margin: 0 0 5px;
+}
+
+.h5,
+h5 {
+    font-size: 18px;
+    margin: 0 0 5px;
+}
+
+.h6,
+h6 {
+    font-size: 16px;
+    margin: 0 0 5px;
+}
+
+a {
+    color: $link-color;
+    transition: color 200ms ease;
+    text-decoration: none;
+
+    &:hover {
+        color: $brand-color;
+    }
+}
+
+p {
+    margin: 0 0 1em;
+
+    @include until($desktop) {
+        font-size: 15px;
+        line-height: 25px;
+    }
+}
+
+p:empty,
+p:last-child {
+    margin-bottom: 0;
+}

@@ -1,0 +1,116 @@
+.tabs {
+    .tabs-nav {
+        padding: 20px;
+        list-style: none;
+        text-transform: uppercase;
+        flex-direction: column;
+        margin: 0;
+        display: none;
+        background-color: rgba(76, 76, 76, 0.8);
+
+        @include at-least($small-tablet) {
+            display: flex;
+            position: fixed;
+        };
+
+        li {
+            flex-basis: 0;
+            flex-grow: 1;
+            position: relative;
+            margin: 0 15px 30px;
+            text-transform: none;
+
+            @include at-least($desktop) {
+                margin: 0 0 40px;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            a {
+                color: #ECEBE3;
+                font-weight: 700;
+                letter-spacing: 0;
+                line-height: 25px;
+                display: flex;
+                align-items: center;
+                
+                font-size: 18px;
+
+                @include at-least($desktop) {
+                    line-height: 33px;
+                    font-size: 22px;
+                }
+
+                &:before {
+                    font-family: ThemeIcons !important;
+                    font-style: normal;
+                    font-weight: normal !important;
+                    font-variant: normal;
+                    text-transform: none;
+                    line-height: 1;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    content: "\f104";
+                    padding-right: 5px;
+                    font-size: 15px;
+                }
+
+                &:hover {
+                    color: #B19B7A;
+                }
+            }
+
+            &.is-active {
+                a {
+                    color: #B19B7A;
+                }
+            }
+        }
+    }
+
+    .tab {
+        display: block;
+        margin: 0 0 30px;
+
+        @include at-least($small-tablet) {
+            display: none;
+        }
+
+        @include until($mobile) {
+            margin: 0 0 60px;
+        }
+
+        &.is-active {
+            display: block;
+        }
+
+        .section-title {
+            color: #4c4c4c;
+
+            &:before {
+                background-color: #4c4c4c;
+            }
+        }
+
+        .section-content {
+            color: #4c4c4c;           
+        }
+    }
+}
+
+.tab-container {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include until($small-tablet){
+        background-color: rgba(220, 220, 211, 1);
+        padding: 30px;
+    }
+
+    li {
+        margin: 0;
+    }
+}

@@ -1,0 +1,370 @@
+.section {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 101px 0 40px;
+    position: relative;
+    min-height: 100vh;
+    @include at-least($tablet) {
+        padding: 170px 0 100px;
+        // position: initial;
+    };
+    @include at-least($desktop) {
+        padding: 150px 0 100px;
+    };
+
+    .section-title {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 50px;
+
+        @include until($tablet) {
+            font-size: 23px;
+        }
+
+        &::before {
+            content: "";
+            height: 1px;
+            background-color: #fff;
+            width: 100px;
+            position: absolute;
+            bottom: -30px;
+        }
+    }
+
+    &.text-image {
+        text-align: center;
+
+        .section-image {
+            margin-bottom: 20px;
+        }
+
+        .section-content {
+            color: #4c4c4c;
+
+            .section-title {
+                color: #4c4c4c;
+
+                &:before {
+                    background-color: #4c4c4c;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+
+            .button {
+                border: 1px solid #4c4c4c;
+                border-radius: 25px;
+                padding: 10px 25px;
+                transition: all 350ms ease-in-out;
+                color: #4c4c4c;
+
+                &:hover {
+                    border-color: #b19b7a;
+                    background-color: #b19b7a;
+                    color: #dcdcd3;
+                }
+
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .content-box {
+        width: 100%;
+        max-width: 440px;
+        margin: 100px auto;
+        padding: 0 45px 45px;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        @include until($tablet) {
+            margin: 124px auto;
+        };
+
+        &::before {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            content: "";
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .gallery-image {
+            background-color: rgba(0,0,0,0.5);
+            padding: 25px 50px;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            &:before {
+                bottom: -27px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        .slide-content {
+            padding-top: 0;
+            text-align: center;
+
+            ul {
+                list-style: none;
+                display: flex;
+                flex-flow: column;
+                justify-items: center;
+                margin: 0 0 40px;
+                padding: 0;
+            }
+        }
+    }
+
+    &.split-background,
+    &.whole-background {
+        // position: relative;
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            // width: 100%;
+            background-color: rgba(0,0,0,0.2);
+        }
+
+        .centering {
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    &.split-background {
+        @include until($tablet) {
+            padding: 120px 0 40px;
+        }
+
+        &:before {
+            width: 100%;
+            @include at-least($small-tablet) {
+                width: 50%;
+            };
+        }
+
+        &:after {
+            background-color: rgba(236, 235, 227, 1);
+            left: auto;
+            width: 50%;
+            display: none;
+            @include at-least($small-tablet) {
+                display: block;
+            };
+        }        
+
+        .form-wrapper {
+            @include until($small-tablet) {
+                background-color: rgba(236, 235, 227, 1);
+            }
+
+            .section-title {
+                color: #4c4c4c;
+
+                &:before {
+                    background-color: #4c4c4c;
+                }
+            }
+
+            .form {
+                color: #4c4c4c;
+
+                .button {
+                    border: 1px solid #4c4c4c;
+                    border-radius: 25px;
+                    padding: 10px 25px;
+                    transition: all 350ms ease-in-out;
+                    color: #4c4c4c;
+
+                    &:hover {
+                        border-color: #b19b7a;
+                        background-color: #b19b7a;
+                        color: #fff;
+                    }
+
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &.form-wrapper {
+            padding: 100px 0 0 0;
+
+            .section-content {
+                background-color: rgba(76, 76, 76, 0.8);
+                padding: 30px;
+            }
+        }
+    }
+
+    &.section-services {
+        padding-top: 0;
+        padding-bottom: 0;
+
+        .service-center {
+            min-height: 100vh;
+
+            .item-wrapper {
+                display: flex;
+                flex-direction: column;
+
+                .item-image {
+                    &:first-child {
+                        @include until($tablet) {
+                            padding-top: 200px;
+                        };
+                    }
+                }
+            }
+        }
+
+        .item-image {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 100%;
+            // box-sizing: content-box;
+
+            @include until($small-desktop) {
+                padding: 20px;
+            }
+
+            @include at-least($tablet) {
+                display: flex;
+                align-items: flex-end;
+                // padding: 0;
+            }
+
+            // @include at-least($small-desktop) {
+            //     padding: 50px 0;
+            // }
+
+            // @include at-least($desktop) {
+            //     padding: 170px 50px 50px;
+            // }
+
+            @include until($desktop) {
+                font-size: 15px;
+                line-height: 25px;
+            }
+        }
+
+        .service-box {
+            text-align: center;              
+            // margin: 0;
+            min-height: auto;
+            background-color: #dcdcd3;
+            padding: 30px;
+            // position: relative;
+            // z-index: 1;
+
+            @include at-least($tablet) {
+                min-height: 360px;
+                max-height: 360px;           
+            }
+
+            @include at-least($small-desktop) {
+                min-height: 365px;
+                max-height: 365px; 
+            }           
+
+            .service-content {
+                color: #4c4c4c;
+
+                p {
+                    max-height: 120px;
+                    overflow: hidden;
+                }
+            }
+        }
+
+        .section-title {
+            text-transform: capitalize;
+            text-align: center;
+            color: #4c4c4c;
+
+            &:before {
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #4c4c4c;
+            }
+        }
+
+        .service-content {
+            ul {
+                list-style-position: inside;
+                padding-left: 15px;
+                margin-bottom: 45px;
+            }
+
+            .button {
+                border: 1px solid #4c4c4c;
+                border-radius: 25px;
+                padding: 10px 25px;
+                transition: all 350ms ease-in-out;
+                color: #4c4c4c;
+
+                &:hover {
+                    border-color: #b19b7a;
+                    background-color: #b19b7a;
+                    color: #dcdcd3;
+                }
+
+                &:before {
+                    display: none;
+                }
+            }
+        }
+
+        // .overlay {
+        //     position: relative;
+
+        //     &:before {
+        //         content: "";
+        //         position: absolute;
+        //         left: 0;
+        //         right: 0;
+        //         top: 0;
+        //         bottom: 0;
+        //         background-color: rgba(0, 0, 0, 0.5);
+        //     }
+        // }
+    }
+
+    &.not-found {
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.section-content {
+    @include until($desktop) {
+        font-size: 15px;
+        line-height: 25px;
+    }
+}
+
+.project-location {
+    @include until($desktop) {
+        font-size: 15px;
+        line-height: 25px;
+    }
+}

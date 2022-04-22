@@ -1,0 +1,35 @@
+$font-family-base: 'Montserrat', sans-serif;
+$font-family-alt: 'British Castilla', sans-serif;
+$icon-family-base: 'ThemeIcons';
+$font-size-base: 18px;
+$line-height-base: 30px;
+$text-color: #ECEBE3;
+$link-color: inherit;
+$headings-font-family: 'British Castilla', serif;
+$headings-font-weight: 400;
+$headings-line-height: 2;
+$headings-color: $text-color;
+$brand-color: #B19B7A;
+$brand-color-alt: #000000;
+$button-color: $brand-color;
+$button-text-color: #ffffff;
+$mobile: 480px;
+$small-tablet: 768px;
+$tablet: 1024px;
+$small-desktop: 1280px;
+$desktop: 1480px;
+$viewport-increment: 1px; // layout
+$grid-columns: 12;
+$grid-gutter-mobile: 20px; // header
+$grid-gutter-smalldesktop: 50px; // header
+$grid-gutter: 100px;
+$desktop-header-height: 110px;
+$mobile-header-height: 60px;
+$hamburger-height: 21px;
+$hamburger-width: 30px;
+$hamburger-line-height: 3px;
+$hamburger-translateY: ($hamburger-height - $hamburger-line-height) / 2; // centering
+$centering-width: 1320px; // centering-width = width + (gutter * 2)
+$centering-gutter-mobile: 20px;
+$centering-gutter-smalldesktop: 50px;
+$centering-gutter: 100px;

@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "ThemeIcons";
+    src: url("../fonts/ThemeIcons.eot?65cce068c7bc2a434a1bc6a5723082b0?#iefix") format("embedded-opentype"),
+url("../fonts/ThemeIcons.woff2?65cce068c7bc2a434a1bc6a5723082b0") format("woff2"),
+url("../fonts/ThemeIcons.woff?65cce068c7bc2a434a1bc6a5723082b0") format("woff"),
+url("../fonts/ThemeIcons.ttf?65cce068c7bc2a434a1bc6a5723082b0") format("truetype"),
+url("../fonts/ThemeIcons.svg?65cce068c7bc2a434a1bc6a5723082b0#ThemeIcons") format("svg");
+}
+
+ [class^="icon-"]:before,  [class*=" icon-"]:before {
+    font-family: ThemeIcons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+    content: "\f101";
+}
+.icon-instagram:before {
+    content: "\f102";
+}
+.icon-left-arrow:before {
+    content: "\f103";
+}
+.icon-right-arrow:before {
+    content: "\f104";
+}
+.icon-twitter:before {
+    content: "\f105";
+}

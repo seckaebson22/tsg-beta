@@ -1,0 +1,97 @@
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.centering {
+	margin: 0 auto;
+	// padding: 0 20px;
+	max-width: 1920px;
+	width: 100%;
+	padding-left: $centering-gutter-mobile;
+	padding-right: $centering-gutter-mobile;
+
+	@include at-least($small-desktop) {
+		padding-left: $centering-gutter-smalldesktop;
+		padding-right: $centering-gutter-smalldesktop;
+	}
+
+	;
+
+	@include at-least($desktop) {
+		padding-left: $centering-gutter;
+		padding-right: $centering-gutter;
+	}
+
+	;
+}
+
+.socials {
+	padding: 0;
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	align-items: center;
+
+	li {
+		padding: 0 15px;
+
+		a {
+			display: flex;
+		}
+	}
+}
+
+.pagination {
+	text-align: center;
+	padding-top: 25px;
+
+	@include at-least($tablet) {
+		padding-top: 50px;
+	}
+
+	;
+}
+
+.wp-pagenavi a:hover,
+.wp-pagenavi span.current {
+	border-color: #B19B7A;
+	color: #B19B7A;
+}
+
+.grecaptcha-badge {
+	display: none;
+}
+
+.mfp-bg {
+	background: transparent;
+}
+
+.white-popup-block {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 30px;
+	position: relative;
+	background: #b19b7a;
+
+	.popup-modal-dismiss {
+		position: absolute;
+		right: 30px;
+	}
+
+	.button {
+		&:hover {
+			color: #4c4c4c;
+		}
+	}
+}
